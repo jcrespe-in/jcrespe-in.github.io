@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="神墓续集全文阅读 - 提供神墓续集正版连载、章节目录、角色介绍及读者评论交流。探索辰东笔下未完的传奇，阅读神墓后续故事。">
+    <meta name="keywords" content="神墓续集全文阅读, 神墓续集, 辰东, 网文小说, 玄幻小说">
+    <title>神墓续集全文阅读 - 辰东传奇续篇与完整章节</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B0000;
+            --secondary-color: #D4AF37;
+            --bg-dark: #121212;
+            --bg-card: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-muted: #A0A0A0;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .search-box {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .search-box {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(to bottom, rgba(18, 18, 18, 0.3), var(--bg-dark)), url('https://picsum.photos/seed/shenmu_hero/1200/600.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #a00000;
+            border-color: #a00000;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            color: var(--secondary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Book Card */
+        .book-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #333;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-color: var(--secondary-color);
+        }
+
+        .book-cover {
+            height: 200px;
+            background-color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 15px;
+        }
+
+        .book-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .book-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .book-tags span {
+            background-color: rgba(139, 0, 0, 0.3);
+            color: #ff6b6b;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+
+        .book-desc {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Reading List Section */
+        .chapter-list {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .chapter-item:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chapter-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #333;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .chapter-name a {
+            color: var(--text-main);
+        }
+
+        .chapter-name a:hover {
+            color: var(--secondary-color);
+        }
+
+        .chapter-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+
+        .info-header {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        .info-cover {
+            width: 120px;
+            height: 160px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .info-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-details {
+            flex: 1;
+        }
+
+        .info-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .info-author {
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .info-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .info-stats strong {
+            color: var(--secondary-color);
+        }
+
+        .info-tabs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            font-size: 1rem;
+        }
+
+        .tab-btn.active {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .intro-text {
+            color: #ccc;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .info-header {
+                flex-direction: column;
+            }
+
+            .info-cover {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <a href="#" class="logo">
+            <span>神墓续集</span>阅读网
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#catalog">章节目录</a></li>
+                <li><a href="#recommend">推荐</a></li>
+                <li><a href="#about">简介</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索书名或作者..." style="padding: 8px; border-radius: 4px; border: 1px solid #333; background: #222; color: white;">
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>辰东笔下未完的传奇</h1>
+            <p>神墓续集全文阅读，带你重返那个波澜壮阔的世界，探寻天地的终极奥义与生命的不朽之谜。</p>
+            <div>
+                <a href="#catalog" class="btn btn-primary">立即开始阅读</a>
+                <a href="#recommend" class="btn btn-outline">查看推荐</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Book Info Section -->
+    <section id="about" class="info-section">
+        <div class="info-header">
+            <div class="info-cover">
+                <img src="https://picsum.photos/seed/shenmu_cover/200/300.jpg" alt="神墓封面">
+            </div>
+            <div class="info-details">
+                <h2 class="info-title">神墓续集</h2>
+                <p class="info-author">作者：辰东（续写团队）</p>
+                <div class="info-stats">
+                    <span><strong>状态：</strong>连载中</span>
+                    <span><strong>分类：</strong>东方玄幻</span>
+                    <span><strong>字数：</strong>1,240,000+</span>
+                    <span><strong>收藏：</strong>3.5万</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-tabs">
+            <button class="tab-btn active" onclick="switchTab('intro')">作品简介</button>
+            <button class="tab-btn" onclick="switchTab('catalog')">章节目录</button>
+            <button class="tab-btn" onclick="switchTab('author')">作者专栏</button>
+        </div>
+
+        <div id="intro" class="tab-content active">
+            <p class="intro-text">
+                《神墓》作为辰东的成名之作，以宏大的世界观和跌宕起伏的剧情震撼了无数读者。神墓续集承接原著结局，在神魔陨落、天道崩塌的废墟之上，新的纪元正在孕育。
+                <br><br>
+                本作继续讲述辰南与梦可儿等众人的冒险旅程，深入探索“万古诸天”的隐秘。在这里，神魔不再只是传说中的符号，而是挣扎求存的众生。读者将见证新的神魔诞生，目睹旧秩序的崩塌与新秩序的建立。这是一部关于勇气、友情、爱情以及追寻生命本源的热血史诗。
+            </p>
+        </div>
+
+        <div id="catalog" class="tab-content">
+            <p class="intro-text" style="text-align: center; color: var(--secondary-color);">共 156 章</p>
+        </div>
+
+        <div id="author" class="tab-content">
+            <p class="intro-text">辰东，原名陈东，中国著名网络小说家，起点白金作家。“辰东三兄弟”之一。代表作有《神墓》、《完美世界》、《遮天》、《圣墟》等。辰东的作品以情节跌宕起伏、人物形象鲜明、世界观宏大著称，深受读者喜爱。</p>
+        </div>
+    </section>
+
+    <!-- Latest Chapters -->
+    <section id="catalog" class="chapter-list">
+        <div class="section-title">
+            最新章节 <span>Latest Updates</span>
+        </div>
+        <div class="chapter-list-content">
+            <div class="chapter-item">
+                <div class="chapter-name">
+                    <span class="chapter-icon">L</span>
+                    <a href="#">第156章 诸天归一</a>
+                </div>
+                <span class="chapter-date">2023-10-15</span>
+            </div>
+            <div class="chapter-item">
+                <div class="chapter-name">
+                    <span class="chapter-icon">L</span>
+                    <a href="#">第155章 永恒的凝视</a>
+                </div>
+                <span class="chapter-date">2023-10-12</span>
+            </div>
+            <div class="chapter-item">
+                <div class="chapter-name">
+                    <span class="chapter-icon">L</span>
+                    <a href="#">第154章 天道重启</a>
+                </div>
+                <span class="chapter-date">2023-10-08</span>
+            </div>
+            <div class="chapter-item">
+                <div class="chapter-name">
+                    <span class="chapter-icon">L</span>
+                    <a href="#">第153章 破碎的界碑</a>
+                </div>
+                <span class="chapter-date">2023-10-05</span>
+            </div>
+            <div class="chapter-item">
+                <div class="chapter-name">
+                    <span class="chapter-icon">L</span>
+                    <a href="#">第152章 逆乱阴阳</a>
+                </div>
+                <span class="chapter-date">2023-10-01</span>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="btn btn-outline" style="padding: 5px 15px; font-size: 0.9rem;">查看全部章节</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Books -->
+    <section id="recommend">
+        <div class="section-title">
+            同类推荐 <span>Similar Works</span>
+        </div>
+        <div class="grid-3">
+            <article class="book-card">
+                <div class="book-cover">
+                    <img src="https://picsum.photos/seed/zhenshan/300/400.jpg" alt="遮天">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title"><a href="#">遮天</a></h3>
+                    <div class="book-meta">
+                        <span>辰东</span>
+                        <span>345万字</span>
+                    </div>
+                    <div class="book-tags">
+                        <span>东方玄幻</span>
+                        <span>仙侠</span>
+                    </div>
+                    <p class="book-desc">登天路，踏歌行，弹指遮天。一部关于远古神话的宏大史诗。</p>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <div class="book-cover">
+                    <img src="https://picsum.photos/seed/wanxiang/300/400.jpg" alt="万古神帝">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title"><a href="#">万古神帝</a></h3>
+                    <div class="book-meta">
+                        <span>天蚕土豆</span>
+                        <span>680万字</span>
+                    </div>
+                    <div class="book-tags">
+                        <span>玄幻</span>
+                        <span>热血</span>
+                    </div>
+                    <p class="book-desc">诸天神魔，万古神帝。张若尘重生归来，誓要守护所爱之人。</p>
+                </div>
+            </article>
+
+            <article class="book-card">
+                <div class="book-cover">
+                    <img src="https://picsum.photos/seed/longzhu/300/400.jpg" alt="龙符">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title"><a href="#">龙符</a></h3>
+                    <div class="book-meta">
+                        <span>辰东</span>
+                        <span>420万字</span>
+                    </div>
+                    <div class="book-tags">
+                        <span>东方玄幻</span>
+                        <span>异能</span>
+                    </div>
+                    <p class="book-desc">龙符现，天地变。苏铭踏碎虚空，探寻宇宙的终极奥秘。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">版权声明</a>
+            <a href="#">广告合作</a>
+            <a href="#">用户协议</a>
+            <a href="#">联系客服</a>
+        </div>
+        <p>&copy; 2023 神墓续集阅读网. All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; color: #666; margin-top: 10px;">
+            本站内容仅供个人阅读交流使用，版权归原作者所有。
+        </p>
+    </div>
+</footer>
+
+<script>
+    function switchTab(tabId) {
+        // Remove active class from all buttons
+        const buttons = document.querySelectorAll('.tab-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // Hide all tab content
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // Activate clicked button
+        event.target.classList.add('active');
+        
+        // Show selected content
+        document.getElementById(tabId).classList.add('active');
+    }
+
+    // Simple scroll behavior for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
