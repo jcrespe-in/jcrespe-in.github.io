@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="软文营销平台提供专业的内容营销解决方案，帮助企业通过优质文案、自媒体投放和SEO优化实现品牌增长。包含案例展示、投放渠道分析及效果监控功能。">
+    <meta name="keywords" content="软文营销平台,内容营销,品牌推广,自媒体投放,SEO优化">
+    <title>软文营销平台-专业内容营销与品牌推广解决方案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #475569;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin: 0;
+        }
+
+        /* 核心优势 */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* 服务流程 */
+        .process-section {
+            background-color: var(--card-bg);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--border-color);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 20px;
+            border: 4px solid var(--card-bg);
+        }
+
+        .step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        /* 案例展示 */
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .case-img {
+            height: 200px;
+            background-color: #cbd5e1;
+            position: relative;
+        }
+        
+        .case-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-content {
+            padding: 25px;
+        }
+
+        .case-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            background-color: #eff6ff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .case-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .case-content p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .case-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .case-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 渠道矩阵 */
+        .channels-section {
+            background-color: #1e293b;
+            color: white;
+        }
+
+        .channels-section .section-header h2 {
+            color: white;
+        }
+
+        .channels-section .section-header p {
+            color: #94a3b8;
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .channel-item {
+            background-color: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.2s;
+        }
+
+        .channel-item:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .channel-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .channel-desc {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-banner p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            margin-top: 15px;
+            font-size: 0.95rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .step {
+                margin-bottom: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                <span>文策云</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features" class="active">核心功能</a>
+                <a href="#process">服务流程</a>
+                <a href="#cases">成功案例</a>
+                <a href="#channels">投放渠道</a>
+                <a href="#pricing">服务报价</a>
+            </nav>
+            <a href="#contact" class="cta-btn">获取方案</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>软文营销平台<br>让品牌声音触达目标受众</h1>
+                <p>基于大数据的精准内容分发系统，提供从文案策划、渠道筛选到效果追踪的一站式软文营销服务，助力企业实现低成本、高转化的品牌增长。</p>
+                <div style="margin-bottom: 30px;">
+                    <a href="#contact" class="cta-btn" style="padding: 15px 35px; font-size: 1.1rem;">立即咨询</a>
+                    <a href="#cases" style="margin-left: 20px; color: var(--primary-color); font-weight: 600;">查看案例 &rarr;</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>合作媒体资源</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10W+</h3>
+                        <p>月度曝光量</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>客户满意度</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>全链路内容营销解决方案</h2>
+                    <p>我们不仅提供软文发布，更提供策略支持，确保每一篇内容都能产生实际商业价值。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>专业文案策划</h3>
+                        <p>资深营销团队根据产品特性和用户画像，撰写符合平台调性的高质量软文，植入品牌信息而不显生硬。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>精准渠道匹配</h3>
+                        <p>基于行业属性与受众分析，智能匹配最适合的垂直媒体、自媒体及行业门户，实现精准触达。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>数据化效果监控</h3>
+                        <p>提供详细的数据报表，包括阅读量、点击率、评论互动及转化路径追踪，让营销投入透明可控。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>SEO 搜索优化</h3>
+                        <p>优化文章标题、关键词及排版结构，提升搜索引擎收录率，为品牌带来持续的免费流量。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>全网矩阵分发</h3>
+                        <p>支持PC端与移动端同步分发，覆盖新闻源、博客、论坛等多种平台，形成全网传播声量。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>品牌安全护航</h3>
+                        <p>严格审核发稿资质，确保内容真实合规，避免负面舆情风险，维护企业品牌形象。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section process-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>标准化服务流程</h2>
+                    <p>简单四步，开启您的软文营销之旅</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>需求沟通</h4>
+                        <p>分析产品卖点与推广目标，制定初步营销策略。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>内容创作</h4>
+                        <p>撰写并审核软文稿件，设计配图与排版。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>渠道发布</h4>
+                        <p>安排发布计划，覆盖选定媒体矩阵。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>效果反馈</h4>
+                        <p>提供数据报告，复盘优化后续投放方案。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cases" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>行业成功案例</h2>
+                    <p>不同行业的软文营销实践，助您直观了解效果</p>
+                </div>
+                <div class="case-grid">
+                    <article class="case-card">
+                        <div class="case-img">
+                            <!-- 使用 picsum 作为占位符 -->
+                            <img src="https://picsum.photos/seed/tech1/600/400" alt="科技产品推广案例">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-tag">科技数码</span>
+                            <h3>智能穿戴设备新品上市推广</h3>
+                            <p>通过在科技垂类媒体及社交平台发布评测软文，成功引导5000+精准用户下载试用，首月销量提升30%。</p>
+                            <a href="#" class="case-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/finance2/600/400" alt="金融理财案例">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-tag">金融理财</span>
+                            <h3>年度理财规划咨询服务推广</h3>
+                            <p>利用SEO优化软文策略，在搜索引擎及财经博客建立品牌信任度，咨询量环比增长45%。</p>
+                            <a href="#" class="case-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="case-card">
+                        <div class="case-img">
+                            <img src="https://picsum.photos/seed/lifestyle3/600/400" alt="美妆护肤案例">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-tag">美妆护肤</span>
+                            <h3>新锐国货品牌口碑建设</h3>
+                            <p>通过KOL合作与小红书/知乎种草软文，打造爆款单品，全网话题阅读量破亿。</p>
+                            <a href="#" class="case-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="channels" class="section channels-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>覆盖全平台的投放渠道</h2>
+                    <p>无论是新闻资讯还是社交社区，我们都能找到最适合您的发声位置</p>
+                </div>
+                <div class="channel-grid">
+                    <div class="channel-item">
+                        <span class="channel-name">新闻门户</span>
+                        <span class="channel-desc">腾讯、网易、新浪等主流资讯平台</span>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-name">垂直媒体</span>
+                        <span class="channel-desc">汽车之家、36氪、虎嗅等行业媒体</span>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-name">自媒体矩阵</span>
+                        <span class="channel-desc">微信公众号、百家号、今日头条</span>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-name">社区论坛</span>
+                        <span class="channel-desc">知乎、豆瓣、贴吧高权重论坛</span>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-name">短视频文案</span>
+                        <span class="channel-desc">抖音、快手脚本与图文包装</span>
+                    </div>
+                    <div class="channel-item">
+                        <span class="channel-name">行业B2B</span>
+                        <span class="channel-desc">慧聪网、阿里巴巴等B2B平台</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-banner">
+            <div class="container">
+                <h2>准备好提升品牌声量了吗？</h2>
+                <p>免费获取定制化软文营销方案与报价，专业顾问一对一服务。</p>
+                <a href="#" class="btn-white">预约咨询</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                        <span>文策云</span>
+                    </a>
+                    <p>专注于为企业提供高效、透明、可衡量的软文营销服务，助力品牌在数字时代脱颖而出。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>平台服务</h4>
+                    <ul>
+                        <li><a href="#">软文发布</a></li>
+                        <li><a href="#">公关代写</a></li>
+                        <li><a href="#">品牌推广</a></li>
+                        <li><a href="#">舆情监测</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>解决方案</h4>
+                    <ul>
+                        <li><a href="#">新品上市</a></li>
+                        <li><a href="#">危机公关</a></li>
+                        <li><a href="#">口碑营销</a></li>
+                        <li><a href="#">SEO优化</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">合作加盟</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 文策云软文营销平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+          </html>
