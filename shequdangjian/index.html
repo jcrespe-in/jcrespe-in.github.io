@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区党建-智慧党建服务平台与基层治理解决方案</title>
+    <meta name="description" content="提供专业的社区党建服务平台，涵盖党员教育管理、三会一课记录、智慧党务系统、基层党建活动策划及社区治理数字化解决方案。">
+    <meta name="keywords" content="社区党建,智慧党建,三会一课,党员管理,基层治理">
+    <style>
+        :root {
+            --primary-red: #B71C1C;
+            --primary-dark: #7f0000;
+            --accent-gold: #FFD700;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+            border: 1px solid var(--primary-red);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-red);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-red);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #B71C1C 0%, #880E4F 100%);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" opacity="0.05"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right center;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-top-color: var(--primary-red);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #fff0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-red);
+        }
+
+        .feature-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: currentColor;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Services/Modules */
+        .bg-white {
+            background-color: white;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .service-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(183, 28, 28, 0.15);
+            line-height: 1;
+            font-family: Arial, sans-serif;
+        }
+
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Statistics */
+        .stats {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            color: var(--accent-gold);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background-color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-red);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: #FFF3E0;
+            text-align: center;
+            padding: 60px 0;
+            border-radius: 12px;
+            margin: 60px auto;
+            max-width: var(--container-width);
+        }
+
+        .cta-section h2 {
+            margin-bottom: 15px;
+            color: #E65100;
+        }
+
+        .cta-section p {
+            margin-bottom: 25px;
+            color: #5D4037;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text {
+                max-width: 100%;
+            }
+            .hero-image {
+                justify-content: center;
+                margin-bottom: 30px;
+            }
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 15px;
+            }
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: var(--shadow-md);
+                padding: 20px;
+            }
+            nav.active {
+                display: block;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .stats-grid {
+                flex-direction: column;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/>
+                </svg>
+                <span>红色领航</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">核心功能</a></li>
+                    <li><a href="#services">解决方案</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>智慧社区党建平台<br>赋能基层治理现代化</h1>
+                    <p>集党员教育、组织管理、三会一课、活动发布于一体的一站式数字化解决方案，助力党组织规范化建设，提升服务群众效能。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: inherit;">
+                        <a href="#contact" class="btn btn-primary">预约演示</a>
+                        <a href="#features" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: white;">了解更多</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/community_party/600/400" alt="智慧社区党建工作场景">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心功能模块</h2>
+                    <p>全方位覆盖社区党建工作场景，实现党务工作线上化、规范化、智能化</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                        </div>
+                        <h3>三会一课管理</h3>
+                        <p>自动生成会议通知、记录模板，支持党员在线签到与学习心得提交，全程留痕可追溯。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                        </div>
+                        <h3>党员电子档案</h3>
+                        <p>建立党员全生命周期电子档案，动态更新党费缴纳、组织关系转接及志愿服务记录。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        </div>
+                        <h3>组织生活监督</h3>
+                        <p>实时监控各支部会议开展情况，支持视频连线与线上投票，确保组织生活不走过场。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>
+                        </div>
+                        <h3>党务公开公示</h3>
+                        <p>党务、财务、事务三公开平台，支持二维码扫码查看，保障党员群众的知情权与监督权。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>1000+</h3>
+                    <p>服务社区党组织</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50万+</h3>
+                    <p>活跃党员用户</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>系统运行稳定性</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>专业技术支持</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>数字化解决方案</h2>
+                    <p>针对不同规模的社区与街道，提供定制化的党建信息化建设方案</p>
+                </div>
+                <div class="service-list">
+                    <div class="service-item">
+                        <div class="service-number">01</div>
+                        <div class="service-content">
+                            <h3>智慧社区综合管理平台</h3>
+                            <p>将党建业务融入社区治理，实现“党建+网格化”管理，打通服务群众的“最后一公里”。</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-number">02</div>
+                        <div class="service-content">
+                            <h3>流动党员云端之家</h3>
+                            <p>专为流动党员设计，提供在线学习、组织关系转接、活动报名等功能，让流动不流心。</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-number">03</div>
+                        <div class="service-content">
+                            <h3>红色物业协同治理</h3>
+                            <p>搭建“社区+物业+业委会”三方联动平台，通过党建联席会议解决小区治理难题。</p>
+                        </div>
+                    </div>
+                    <div class="service-item">
+                        <div class="service-number">04</div>
+                        <div class="service-content">
+                            <h3>智慧党建数据驾驶舱</h3>
+                            <p>可视化大屏展示，实时监测党员结构、活动开展、党费缴纳等关键指标，辅助决策分析。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <div class="container">
+            <section class="cta-section">
+                <h2>开启社区党建数字化转型</h2>
+                <p>立即联系我们，获取免费试用账号与定制化方案演示</p>
+                <a href="#contact" class="btn btn-primary">免费申请试用</a>
+            </section>
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于社区党建平台功能与服务的常见疑问</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>系统是否支持多级组织架构管理？</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>支持。系统采用树状结构设计，可完美适配市-区-街道-社区-网格的五级组织架构，支持跨区域人员流动管理。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>数据安全如何保障？</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我们采用私有化部署与云端混合模式，数据加密传输，符合国家网络安全等级保护标准，确保党务数据绝对安全。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" onclick="toggleFaq(this)">
+                        <div class="faq-question">
+                            <span>如何进行系统培训与上线支持？</span>
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>提供专属客服团队，支持远程视频培训、操作手册发放以及现场上线指导，确保每一位党务工作者都能熟练使用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>联系我们</h2>
+                    <p>期待与您携手共建智慧社区党建新生态</p>
+                </div>
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <p style="margin-bottom: 30px;">如果您有需求，请填写下表或直接拨打咨询热线。</p>
+                    <form onsubmit="event.preventDefault(); alert('感谢您的留言，我们将尽快联系您！');" style="text-align: left;">
+                        <div style="margin-bottom: 20px;">
+                            <input type="text" placeholder="您的姓名" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <input type="email" placeholder="联系邮箱" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <textarea placeholder="需求描述" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>红色领航</h3>
+                    <p>专注于基层党建信息化建设，致力于通过技术创新推动社区治理现代化，服务全国基层党组织与党员群众。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">智慧党建平台</a></li>
+                        <li><a href="#">社区网格化管理</a></li>
+                        <li><a href="#">三会一课系统</a></li>
+                        <li><a href="#">党员积分管理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>解决方案</h4>
+                    <ul>
+                        <li><a href="#">街道/乡镇版</a></li>
+                        <li><a href="#">社区/小区版</a></li>
+                        <li><a href="#">两新组织版</a></li>
+                        <li><a href="#">学校/医院版</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@redleader.com</li>
+                        <li>地址：北京市海淀区中关村软件园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 红色领航智慧社区服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        function toggleFaq(element) {
+            const parent = element.parentElement;
+            // Close others
+            const allFaqs = document.querySelectorAll('.faq-item');
+            allFaqs.forEach(item => {
+                if (item !== parent) item.classList.remove('active');
+            });
+            // Toggle current
+            parent.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+                              </html>
