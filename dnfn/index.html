@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DNF女漫游职业深度指南，涵盖技能加点、装备搭配、刷图技巧及PK场策略。提供最新的DNF女漫游副本通关视频解析与实战经验分享。">
+    <meta name="keywords" content="dnf女漫游,地下城与勇士,女漫游加点,女漫游装备,DNF攻略">
+    <title>dnf女漫游-地下城与勇士女漫游职业技能加点与装备搭配全攻略</title>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --secondary-color: #4a69bd;
+            --bg-dark: #1e272e;
+            --bg-card: #2f3640;
+            --text-main: #dfe4ea;
+            --text-muted: #b2bec3;
+            --accent-gold: #feca57;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: rgba(30, 39, 46, 0.95);
+            border-bottom: 1px solid #444;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, rgba(74, 105, 189, 0.2) 0%, rgba(30, 39, 46, 1) 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ff6b81, #feca57);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 3rem 0;
+        }
+
+        /* 通用标题 */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        /* 技能加点部分 */
+        .skill-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skill-sidebar {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .skill-sidebar h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-sidebar ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .skill-sidebar span.tag {
+            background-color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .skill-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .skill-card:hover {
+            transform: translateX(5px);
+        }
+
+        .skill-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 装备推荐 */
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .gear-card {
+            background-color: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .gear-img-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #3d4653;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        .gear-content {
+            padding: 1.5rem;
+        }
+
+        .gear-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .gear-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .gear-tag {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.05);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .gear-stats {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 攻略列表 */
+        .guide-list {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .guide-item:last-child {
+            border-bottom: none;
+        }
+
+        .guide-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgba(255,255,255,0.05);
+            margin-right: 1.5rem;
+            min-width: 40px;
+        }
+
+        .guide-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .guide-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq-section {
+            margin-top: 4rem;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #1a1d24;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+            border-top: 1px solid #444;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            margin: 0 1rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-card);
+                padding: 1rem;
+                gap: 1rem;
+                border-bottom: 1px solid #444;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .skill-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .guide-list {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">DNF<span>攻略</span></a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">加点攻略</a></li>
+                    <li><a href="#">装备推荐</a></li>
+                    <li><a href="#">视频教程</a></li>
+                    <li><a href="#">PK场技巧</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>dnf女漫游</h1>
+                <p>探索神枪手转职女漫游的极致技巧。从技能加点到异界套搭配，为您提供最全面的实战指南。</p>
+                <a href="#skills" class="cta-button">开始阅读攻略</a>
+            </div>
+        </section>
+
+        <section class="container" id="skills">
+            <h2 class="section-title">技能加点指南</h2>
+            <div class="skill-section">
+                <aside class="skill-sidebar">
+                    <h3>流派选择</h3>
+                    <ul>
+                        <li><span>爆发流</span> <span class="tag">高伤</span></li>
+                        <li><span>续航流</span> <span class="tag">稳定</span></li>
+                        <li><span>TP流</span> <span class="tag">精通</span></li>
+                    </ul>
+                    <br>
+                    <h3>核心技能</h3>
+                    <ul>
+                        <li>死亡左轮</li>
+                        <li>死亡滑铲</li>
+                        <li>移动射击</li>
+                        <li>乱射</li>
+                        <li>浮空弹</li>
+                    </ul>
+                </aside>
+                <div class="skill-main">
+                    <article class="skill-card">
+                        <h4>死亡左轮</h4>
+                        <p>女漫游的核心被动技能，增加暴击率和攻击速度。必满技能，所有流派的基础。</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4>死亡滑铲</h4>
+                        <p>位移技能，具有无敌判定，用于躲避BOSS技能或调整输出位置。</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4>移动射击</h4>
+                        <p>直线持续射击，配合死亡左轮的暴击效果，是清小怪和保持输出的核心。</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4>乱射</h4>
+                        <p>爆发技能，瞬间对前方扇形区域进行多段射击，适合在BOSS硬直时释放。</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4>浮空弹</h4>
+                        <p>控制技能，用于将怪物浮空以便连招。通常点至前置等级即可。</p>
+                    </article>
+                    <article class="skill-card">
+                        <h4>踏射</h4>
+                        <p>控制技能，将敌人击退并使其僵直，防止怪物突进干扰输出节奏。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" id="gear">
+            <h2 class="section-title">装备搭配推荐</h2>
+            <div class="gear-grid">
+                <article class="gear-card">
+                    <div class="gear-img-placeholder">
+                        [装备图片占位符]
+                    </div>
+                    <div class="gear-content">
+                        <h3>地狱之路套</h3>
+                        <div class="gear-tags">
+                            <span class="gear-tag">爆发</span>
+                            <span class="gear-tag">高难度</span>
+                        </div>
+                        <p>追求极致的爆发伤害，适合手法娴熟的女漫游玩家。配合暴击药，瞬间输出极高。</p>
+                        <div class="gear-stats">
+                            <p>推荐属强：火/冰</p>
+                            <p>武器：魔战无影</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="gear-card">
+                    <div class="gear-img-placeholder">
+                        [装备图片占位符]
+                    </div>
+                    <div class="gear-content">
+                        <h3>军神耳环</h3>
+                        <div class="gear-tags">
+                            <span class="gear-tag">平衡</span>
+                            <span class="gear-tag">手感</span>
+                        </div>
+                        <p>提供高额的三速和伤害，极大改善女漫游的机动性，是当前版本的毕业选择之一。</p>
+                        <div class="gear-stats">
+                            <p>推荐属强：光</p>
+                            <p>武器：恍惚之境</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="gear-card">
+                    <div class="gear-img-placeholder">
+                        [装备图片占位符]
+                    </div>
+                    <div class="gear-content">
+                        <h3>MP流装备</h3>
+                        <div class="gear-tags">
+                            <span class="gear-tag">续航</span>
+                            <span class="gear-tag">低配</span>
+                        </div>
+                        <p>利用MP减少技能冷却时间，实现技能全开，适合长时间刷图的搬砖党。</p>
+                        <div class="gear-stats">
+                            <p>推荐属强：无限制</p>
+                            <p>武器：释魂</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container" id="guides">
+            <h2 class="section-title">实战技巧与指南</h2>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <span class="guide-number">01</span>
+                    <div class="guide-content">
+                        <h4>卡点输出技巧</h4>
+                        <p>女漫游的技能CD相对较短，学会利用怪物硬直卡技能CD，可以最大化输出效率。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-number">02</span>
+                    <div class="guide-content">
+                        <h4>异界套（远古套）</h4>
+                        <p>在特定版本中，异界套（如“死亡之舞”套）提供特殊的技能攻击力加成，曾是女漫游的顶级装备。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-number">03</span>
+                    <div class="guide-content">
+                        <h4>PK场连招思路</h4>
+                        <p>利用浮空弹和踏射控制对手，配合死亡左轮的暴击伤害进行快速击杀。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <span class="guide-number">04</span>
+                    <div class="guide-content">
+                        <h4>红眼/狂战士组队</h4>
+                        <p>女漫游与狂战士组队时，注意走位，避免抢怪，利用浮空弹为队友创造输出环境。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container faq-section">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">女漫游适合新手吗？</div>
+                <div class="faq-answer">女漫游对操作要求较高，需要熟练掌握走位和技能释放时机，新手建议先熟悉技能机制。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">当前版本女漫游强势吗？</div>
+                <div class="faq-answer">女漫游作为经典职业，依然拥有优秀的机动性和输出能力，只要装备成型，在副本中表现依然出色。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何快速提升伤害？</div>
+                <div class="faq-answer">提升属强、强化武器、选择合适的装备套装以及熟练掌握技能循环是提升伤害的关键。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">投稿指南</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系合作</a>
+            </div>
+            <p class="copyright">Copyright © 2023 DNF女漫游攻略站. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // 移动端菜单切换
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // FAQ 折叠面板逻辑
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                // 关闭其他打开的项
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // 切换当前项
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+      </html>
