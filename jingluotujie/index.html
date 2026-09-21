@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>经络图解-人体经络循行路线与养生指南</title>
+    <meta name="description" content="本站提供详尽的人体经络图解，包含十二正经、奇经八脉的循行路线、穴位分布及养生功效。帮助您通过经络图解了解身体运行规律，实现健康养生。">
+    <meta name="keywords" content="经络图解,人体经络,十二正经,穴位图,中医养生,经络循行">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a7c59;
+            --secondary-color: #8fb398;
+            --bg-color: #f9f7f2;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-light: #666;
+            --accent-color: #d35400;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #3d6346;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-box {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 15px;
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-list a {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+        }
+
+        .sidebar-list span {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        /* Special Feature Section */
+        .feature-section {
+            background-color: #fff;
+            margin: 40px 0;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>经络图解</span>百科
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#main-channels">十二正经</a></li>
+                    <li><a href="#special-channels">奇经八脉</a></li>
+                    <li><a href="#acupoints">穴位图解</a></li>
+                    <li><a href="#faq">养生指南</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">免费查阅</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索人体经络奥秘</h1>
+            <p>系统梳理十二正经与奇经八脉的循行路线，深度解析关键穴位位置与养生功效。让专业的经络图解成为您健康生活的实用指南。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索经络名称、穴位或功效...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <main>
+            <!-- Featured Section -->
+            <section class="feature-section">
+                <div class="section-title">
+                    <h2>核心经络概览</h2>
+                </div>
+                <p style="color: #666; margin-bottom: 20px;">人体经络系统是气血运行的通道，连接着脏腑与体表。以下为最基础的十二正经分布图解。</p>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🫁</div>
+                        <h4>手太阴肺经</h4>
+                        <p style="font-size: 0.9rem; color: #666;">起于中焦，下络大肠，主治呼吸系统疾病及皮肤问题。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🫀</div>
+                        <h4>手少阴心经</h4>
+                        <p style="font-size: 0.9rem; color: #666;">起于心中，属心络小肠，主神志与血液循环。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🫃</div>
+                        <h4>足阳明胃经</h4>
+                        <p style="font-size: 0.9rem; color: #666;">多气多血之经，起于鼻翼，主治消化系统及面部五官。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🫁</div>
+                        <h4>足太阴脾经</h4>
+                        <p style="font-size: 0.9rem; color: #666;">主运化统血，起于足大趾，主治消化与肌肉问题。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Channels Grid -->
+            <section id="main-channels">
+                <div class="section-title">
+                    <h2>十二正经详细图解</h2>
+                    <a href="#" class="view-all">查看完整列表 &rarr;</a>
+                </div>
+                <div class="main-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/lung/400/250" alt="肺经图解" class="card-image">
+                        <div class="card-body">
+                            <span class="card-tag">手太阴</span>
+                            <h3>手太阴肺经循行图</h3>
+                            <p>详细介绍肺经从胸中走向拇指的路线，重点标注中府、云门、尺泽等主要穴位。</p>
+                            <div class="card-footer">
+                                <span>更新于 2023-10-15</span>
+                                <span>阅读: 12k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/stomach/400/250" alt="胃经图解" class="card-image">
+                        <div class="card-body">
+                            <span class="card-tag">足阳明</span>
+                            <h3>足阳明胃经循行图</h3>
+                            <p>涵盖胃经从头到足的完整路径，分析头面部与下肢穴位分布及主治作用。</p>
+                            <div class="card-footer">
+                                <span>更新于 2023-10-18</span>
+                                <span>阅读: 15k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/liver/400/250" alt="肝经图解" class="card-image">
+                        <div class="card-body">
+                            <span class="card-tag">足厥阴</span>
+                            <h3>足厥阴肝经循行图</h3>
+                            <p>深入解析肝经与生殖系统、筋脉的关系，介绍太冲、期门等关键穴位。</p>
+                            <div class="card-footer">
+                                <span>更新于 2023-10-20</span>
+                                <span>阅读: 10k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/heart/400/250" alt="心包经图解" class="card-image">
+                        <div class="card-body">
+                            <span class="card-tag">手厥阴</span>
+                            <h3>手厥阴心包经循行图</h3>
+                            <p>心包经作为心之臣使的循行路线，重点讲解内关穴在急救中的应用。</p>
+                            <div class="card-footer">
+                                <span>更新于 2023-10-22</span>
+                                <span>阅读: 8k</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Special Channels Section -->
+            <section id="special-channels" style="margin-top: 40px;">
+                <div class="section-title">
+                    <h2>奇经八脉图解</h2>
+                </div>
+                <div class="main-grid">
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag" style="background-color: #fff3e0; color: #ef6c00;">督脉</span>
+                            <h3>督脉循行与任督二脉</h3>
+                            <p>督脉入髓海，总督一身之阳；任脉统摄全身之阴。详解任督二脉在小腹及背部的主要走向。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag" style="background-color: #e3f2fd; color: #1565c0;">带脉</span>
+                            <h3>带脉环腰图解</h3>
+                            <p>带脉如束带，约束诸经。详细展示带脉起于带脉穴并环绕腰腹一圈的循行特点。</p>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-body">
+                            <span class="card-tag" style="background-color: #e8f5e9; color: #2e7d32;">冲脉</span>
+                            <h3>冲脉为十二经之海</h3>
+                            <p>冲脉起于气冲，与生殖功能密切相关，兼有调节气血作用。解析其分布走向。</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <div class="section-title">
+                    <h2>常见问题与养生指南</h2>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 经络图解适合初学者看吗？</div>
+                    <div class="faq-answer">A: 适合。本站提供的图解采用简化的路线示意图，重点标注了关键穴位，并配合文字说明主治功效，非常适合中医初学者及养生爱好者查阅。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何通过经络图找到准确的穴位？</div>
+                    <div class="faq-answer">A: 穴位定位通常以骨骼标志为参照（如指骨缝、骨突起）。图解中标注的节点即为关键定位点，配合体表解剖图可准确找到。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 按压经络有什么好处？</div>
+                    <div class="faq-answer">A: 按压经络上的穴位（穴位按摩）可以疏通气血，缓解疲劳，调节脏腑功能。建议在专业人士指导下进行。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q: 网站上的经络图是否经过专业认证？</div>
+                    <div class="faq-answer">A: 网站内容基于中医传统经典理论（如《黄帝内经》）整理，旨在提供科普参考，请勿作为医疗诊断的唯一依据。</div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-box">
+                <div class="section-title" style="font-size: 1.2rem; margin-bottom: 15px;">
+                    <h3>热门分类</h3>
+                </div>
+                <ul class="sidebar-list">
+                    <li><a href="#">手三阴经 <span>12篇</span></a></li>
+                    <li><a href="#">手三阳经 <span>12篇</span></a></li>
+                    <li><a href="#">足三阳经 <span>12篇</span></a></li>
+                    <li><a href="#">足三阴经 <span>12篇</span></a></li>
+                    <li><a href="#">经外奇穴 <span>8篇</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <div class="section-title" style="font-size: 1.2rem; margin-bottom: 15px;">
+                    <h3>穴位查询</h3>
+                </div>
+                <ul class="sidebar-list">
+                    <li><a href="#">足三里 (ST36) <span>胃经</span></a></li>
+                    <li><a href="#">合谷穴 (LI4) <span>大肠经</span></a></li>
+                    <li><a href="#">内关穴 (PC6) <span>心包经</span></a></li>
+                    <li><a href="#">三阴交 (SP6) <span>脾经</span></a></li>
+                    <li><a href="#">百会穴 (GV20) <span>督脉</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box" style="background-color: #e3f2fd; border: 1px solid #bbdefb;">
+                <h4 style="margin-bottom: 10px; color: #0d47a1;">阅读提示</h4>
+                <p style="font-size: 0.9rem; color: #1565c0;">经络图解是理解中医理论的基础。建议从十二正经开始，逐步了解奇经八脉的复杂联系。</p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于经络图解</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于普及中医经络知识，提供清晰、准确的经络循行图解与穴位介绍，帮助大众建立正确的健康养生观念。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">十二正经图解</a></li>
+                    <li><a href="#">奇经八脉图解</a></li>
+                    <li><a href="#">常用穴位大全</a></li>
+                    <li><a href="#">经络养生方法</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关链接</h4>
+                <ul>
+                    <li><a href="#">中医基础理论</a></li>
+                    <li><a href="#">针灸推拿指南</a></li>
+                    <li><a href="#">传统养生文化</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 经络图解百科. All Rights Reserved. 仅供学习参考，请勿用于医疗诊断。</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
